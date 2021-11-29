@@ -135,8 +135,9 @@ public class DaoClientWriteToDatabase implements IClientsCsvWrite {
 			
 			String lineString = "";
 			
-			String tsvPath = "./src/database/CreateDatabase.sql";
-			
+			String tsvPath = "./src/com/bilgeadam/recepergan/database/CreateDatabase.sql";
+			// com\bilgeadam\recepergan\database\CreateDatabase.sql
+			// src\com\bilgeadam\recepergan\database\CreateDatabase.sql
 			File tsvFile = new File(tsvPath);
 			
 			@SuppressWarnings("resource")
