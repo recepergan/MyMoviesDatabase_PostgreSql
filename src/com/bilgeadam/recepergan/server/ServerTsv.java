@@ -59,11 +59,13 @@ public class ServerTsv {
 		
 		String satir = "";
 		String path = "C:\\Users\\rcper\\OneDrive\\Desktop\\Ara Tatili Ödevi\\movies.tsv";
+		
 		// try with resource yapısı
 		// int movieId, String title, String genres, String tconst, String titleType,
 		// String primaryTitle, String originalTitle, String isAdult, String startYear,
 		// String endYear,
 		// String runtimeMinutes, String genres2)
+		
 		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
 			
 			while ((satir = bufferedReader.readLine()) != null) {
@@ -128,7 +130,7 @@ public class ServerTsv {
 					if (stringTokenizer.hasMoreTokens()) {
 						temp.setKnownForTitles(stringTokenizer.nextToken());
 					}
-					String[] tconst = temp.getKnownForTitles().split(",");
+					String[] tconst = temp.getKnownForTitles().split("[,]");
 					ArrayList<MoviesTsvDetail> listMovie = new ArrayList<MoviesTsvDetail>();
 					for (int i = 0; i < tconst.length; i++) {
 						MoviesTsvDetail movTsv = fileReaderMoviesTryWithResources(tconst[i]);
@@ -144,6 +146,7 @@ public class ServerTsv {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println(temp);
 		return temp;
 	}
 	

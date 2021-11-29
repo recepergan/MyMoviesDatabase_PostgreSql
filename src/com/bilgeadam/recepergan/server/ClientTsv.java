@@ -25,6 +25,7 @@ public class ClientTsv {
 		} catch (IOException | ClassNotFoundException | InterruptedException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Client : " + tempList);
 		return tempList;
 		
 	}
